@@ -19,7 +19,7 @@ export default function Navigation({ opened, close }: NavigationProps) {
       onClose={close}
       size="100%"
       position="right"
-      color="black"
+      c="black"
     >
       <Stack align="center" gap={100} justify="center">
         {navlinks}
