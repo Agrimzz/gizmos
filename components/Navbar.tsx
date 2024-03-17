@@ -14,8 +14,9 @@ export default function Navbar() {
         align="center"
         style={{
           boxShadow: " 0px 5px 15px 2px rgba(1,186,254,0.5)",
-          // position: "fixed",
-          // zIndex: 10,
+          position: "fixed",
+          zIndex: 10,
+          top: 0,
         }}
         bg="#fff"
         w="100%"

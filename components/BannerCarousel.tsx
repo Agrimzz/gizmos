@@ -11,7 +11,8 @@ export default function BannerCarousel() {
       loop
       withControls={true}
       withIndicators={true}
-      //   mt={70}
+      mt={70}
+      visibleFrom="lg"
     >
       <Carousel.Slide>
         <Image
