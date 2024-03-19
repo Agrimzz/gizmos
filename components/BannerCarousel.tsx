@@ -1,18 +1,21 @@
 "use client"
-import React from "react"
+import React, { useRef } from "react"
 import { Carousel } from "@mantine/carousel"
 import { Image } from "@mantine/core"
+import Autoplay from "embla-carousel-autoplay"
 
 export default function BannerCarousel() {
+  const autoplay = useRef(Autoplay({ delay: 10000 }))
   return (
     <Carousel
+      withIndicators
       slideSize="100%"
       slideGap="0"
       loop
-      withControls={true}
-      withIndicators={true}
+      withControls
       mt={70}
       visibleFrom="lg"
+      plugins={[autoplay.current]}
     >
       <Carousel.Slide>
         <Image

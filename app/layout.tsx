@@ -9,6 +9,7 @@ import {
   rem,
 } from "@mantine/core"
 import Navbar from "@/components/Navbar"
+import { CartProvider } from "@/context/CartContext"
 
 export const metadata = {
   title: "Gizmos",
@@ -55,8 +56,10 @@ export default function RootLayout({
 
       <body>
         <MantineProvider theme={theme}>
-          <Navbar />
-          {children}
+          <CartProvider>
+            <Navbar />
+            {children}
+          </CartProvider>
         </MantineProvider>
       </body>
     </html>
