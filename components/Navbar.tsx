@@ -1,7 +1,12 @@
 "use client"
 import { Group, Image, Text } from "@mantine/core"
 import React, { useState } from "react"
-import { List, MagnifyingGlass, ShoppingCart } from "@phosphor-icons/react"
+import {
+  List,
+  MagnifyingGlass,
+  ShoppingCart,
+  User,
+} from "@phosphor-icons/react"
 import { useDisclosure } from "@mantine/hooks"
 import Navigation from "./Navigation"
 import Cart from "./Cart"
@@ -36,9 +41,19 @@ export default function Navbar() {
           onClick={() => {
             router.push("/")
           }}
+          visibleFrom="sm"
+        />
+        <Image
+          src="https://media.discordapp.net/attachments/971693348110872628/1214216430971785216/gizmos_logo.png?ex=660ac32c&is=65f84e2c&hm=f7b81c634b40eef1f8030ca55a10753b5ed60fe6f679a07b0a13c3f2129235c4&=&format=webp&quality=lossless&width=1419&height=671"
+          alt="logo"
+          w={150}
+          onClick={() => {
+            router.push("/")
+          }}
+          hiddenFrom="sm"
         />
 
-        <Group align="center" gap={35}>
+        <Group align="center" gap={35} visibleFrom="sm">
           <Text size="sm">Login / Register</Text>
           <ShoppingCart
             color="var(--mantine-color-brand-text)"
@@ -46,6 +61,14 @@ export default function Navbar() {
             onClick={toggleCart}
           />
           <MagnifyingGlass color="var(--mantine-color-brand-text)" size={30} />
+          <List
+            color="var(--mantine-color-brand-text)"
+            size={30}
+            onClick={open}
+          />
+        </Group>
+        <Group align="center" gap={35} hiddenFrom="sm">
+          <User color="var(--mantine-color-brand-text)" size={30} />
           <List
             color="var(--mantine-color-brand-text)"
             size={30}
